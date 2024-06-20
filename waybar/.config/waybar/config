@@ -8,7 +8,7 @@
     "format": "<span style=\"italic\">{}</span>"
   },
   "network": {
-    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-wifi": "   {signalStrength}% ({essid})",
     "format-ethernet": "{ifname} ",
     "format-disconnected": "", 
     "max-length": 50,
@@ -24,30 +24,30 @@
     "on-click": "gnome-calendar"
   },
   "pulseaudio": {
-    "format": "{volume}% {icon} ",
-    "format-bluetooth": "{volume}% {icon} {format_source}",
-    "format-bluetooth-muted": " {icon} {format_source}",
-    "format-muted": "0% {icon} ",
-    "format-source": "{volume}% ",
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}% {format_source}",
+    "format-bluetooth-muted": "{icon} 0% {format_source}",
+    "format-muted": "{icon} 0%",
+    "format-source": " {volume}% ",
     "format-source-muted": "",
     "format-icons": {
-      "headphone": "",
-      "hands-free": "",
-      "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
-      "default": ["", "", ""]
+      "headphone": " ",
+      "hands-free": " ",
+      "headset": " ",
+      "phone": " ",
+      "portable": " ",
+      "car": " ",
+      "default": ["", " ", " "]
     },
     "on-click": "pavucontrol"
   },
   "memory": {
     "interval": 5,
-    "format": "Mem {}%"
+    "format": "  {}%"
   },
   "cpu": {
     "interval": 5,
-    "format": "CPU {usage:2}%"
+    "format": "  {usage:2}%"
   },
   "battery": {
     "states": {
@@ -66,6 +66,6 @@
   },
   "custom/power": {
     "format": " ",
-    "on-click": "swaynag -t warning -m 'Power Menu Options' -b 'Logout' 'swaymsg exit' -b 'Restart' 'shutdown -r now' -b 'Shutdown'  'shutdown -h now' --background=#005566 --button-background=#009999 --button-border=#002b33 --border-bottom=#002b33"
+    "on-click": "~/.config/waybar/scripts/logout.sh"
   }
 }

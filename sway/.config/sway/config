@@ -98,7 +98,7 @@ input * xkb_options compose:menu
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec wlogout
+    bindsym $mod+Shift+e exec ~/.config/waybar/scripts/logout.sh
 #
 # Moving around:
 #
