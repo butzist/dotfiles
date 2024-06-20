@@ -1,16 +1,47 @@
 {
-  "output": ["eDP-1"],
-  "modules-left": ["sway/workspaces", "sway/mode"],
-  "modules-center": ["clock"],
-  "modules-right": ["tray", "network", "bluetooth", "pulseaudio", "cpu", "memory", "battery", "custom/power"],
-
+  "output": [
+    "eDP-1"
+  ],
+  "modules-left": [
+    "sway/workspaces",
+    "sway/mode"
+  ],
+  "modules-center": [
+    "sway/window"
+  ],
+  "modules-right": [
+    "tray",
+    "network",
+    "bluetooth",
+    "pulseaudio",
+    "battery",
+    "group/hardware",
+    "clock",
+    "custom/power"
+  ],
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": [
+      "cpu",
+      "memory"
+    ]
+  },
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "format": "{name}"
+  },
   "sway/mode": {
     "format": "<span style=\"italic\">{}</span>"
   },
+  "sway/window": {
+    "format": "{}",
+    "max-length": 50
+  },
   "network": {
-    "format-wifi": "   {signalStrength}% ({essid})",
+    "format-wifi": " {signalStrength}% ({essid})",
     "format-ethernet": "{ifname} ",
-    "format-disconnected": "", 
+    "format-disconnected": "",
     "max-length": 50,
     "on-click": "alacritty -e 'nmtui'"
   },
@@ -23,11 +54,11 @@
     "on-click": "gnome-calendar"
   },
   "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{icon} {volume}% {format_source}",
-    "format-bluetooth-muted": "{icon} 0% {format_source}",
-    "format-muted": "{icon} 0%",
-    "format-source": " {volume}% ",
+    "format": "{icon}{volume}%",
+    "format-bluetooth": "{icon}{volume}% {format_source}",
+    "format-bluetooth-muted": "{icon}0% {format_source}",
+    "format-muted": "{icon}0%",
+    "format-source": "{volume}% ",
     "format-source-muted": "",
     "format-icons": {
       "headphone": " ",
@@ -36,18 +67,22 @@
       "phone": " ",
       "portable": " ",
       "car": " ",
-      "default": ["", " ", " "]
+      "default": [
+        "",
+        " ",
+        " "
+      ]
     },
     "on-click": "pavucontrol"
   },
   "memory": {
     "interval": 5,
-    "format": "  {}%",
+    "format": " {}%",
     "on-click": "alacritty -e 'btop'"
   },
   "cpu": {
     "interval": 5,
-    "format": "  {usage:2}%",
+    "format": " {usage}%",
     "on-click": "alacritty -e 'btop'"
   },
   "battery": {
@@ -58,11 +93,11 @@
     },
     "format": "{icon} {capacity}%",
     "format-icons": [
-      "  ",
-      "  ",
-      "  ",
-      "  ",
-      "  "
+      " ",
+      " ",
+      " ",
+      " ",
+      " "
     ]
   },
   "bluetooth": {

@@ -1,82 +1,214 @@
+/* -----------------------------------------------------
+* Colors
+* ----------------------------------------------------- */
+
+@define-color workspacesbackground1 #ffffff;
+@define-color workspacesbackground2 #000000;
+@define-color backgroundlight #ffffff;
+@define-color backgrounddark #000000;
+@define-color textcolor1 #ffffff;
+@define-color textcolor2 #000000;
+@define-color error #550000;
+@define-color bordercolor #000000;
+
+/* -----------------------------------------------------
+* General 
+* ----------------------------------------------------- */
+
 * {
+  font-family: "FiraCode Nerd Font";
+  font-weight: bold;
+  font-size: 12px;
   border: none;
-  font-family: Ubuntu Sans;
-  font-size: 14px;
-  color: #ffffff;
-  border-radius: 20px;
+  border-radius: 0px;
 }
 
 window#waybar {
-  background: rgba(0, 0, 0, 0);
-}
-
-/*-----module groups----*/
-.modules-right {
-  background-color: rgba(0,43,51,0.85);
-  margin: 2px 10px 0 0;
-}
-.modules-center {
-  background-color: rgba(0,43,51,0.85);
-  margin: 2px 0 0 0;
-}
-.modules-left {
-  margin: 2px 0 0 5px;
-  background-color: rgba(0,119,179,0.6);
-}
-
-/*-----modules indv----*/
-#workspaces button {
-  padding: 1px 5px;
   background-color: transparent;
+  transition-property: background-color;
+  transition-duration: .5s;
 }
-#workspaces button:hover {
-  box-shadow: inherit;
-  background-color: rgba(0,153,153,1);
+
+#window, #hardware, #workspaces, .modules-right > widget > label {
+  background-color: @backgroundlight;
+  color: @textcolor2;
+  border-radius: 15px;
+  border-style: none;
+  border-width: 0px;
+  border-color: @bordercolor;
+  padding: 2px 10px 0px 10px;
+  margin: 8px 10px 8px 0px;
+  opacity: 0.5;
+  box-shadow: 2px 2px 4px #555555;
+}
+
+/* -----------------------------------------------------
+* Tooltips
+* ----------------------------------------------------- */
+
+tooltip {
+  border-radius: 10px;
+  background-color: @backgroundlight;
+  opacity: 0.8;
+  padding: 20px;
+  margin: 0px;
+}
+
+tooltip label {
+  color: @textcolor2;
+}
+
+/* -----------------------------------------------------
+* Workspaces 
+* ----------------------------------------------------- */
+
+#workspaces {
+  margin: 5px 1px 6px 1px;
+  padding: 0px 1px;
+}
+
+#workspaces button {
+  padding: 0px 5px;
+  margin: 4px 3px;
+  font-size: 16px;
+  border-radius: 15px;
+  border: 0px;
+  color: @textcolor1;
+  background-color: @workspacesbackground2;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.4;
 }
 
 #workspaces button.focused {
-  background-color: rgba(0,43,51,0.85);
+  color: @textcolor1;
+  background: @workspacesbackground2;
+  border-radius: 15px;
+  min-width: 40px;
+  transition: all 0.3s ease-in-out;
+  opacity: 1.0;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#temperature,
-#network,
-#pulseaudio,
-#tray,
-#mode,
-#custom-power {
-  padding: 0 10px;
-}
-#mode {
-  color: #cc3436;
-  font-weight: bold;
-}
-#custom-power {
-  background-color: rgba(0,119,179,0.6);
-  border-radius: 100px;
-  margin: 5px 5px;
-  padding: 1px 1px 1px 6px;
+#workspaces button.urgent {
+  color: @textcolor1;
+  background: @error;
+  border-radius: 15px;
+  min-width: 40px;
+  transition: all 0.3s ease-in-out;
+  opacity: 1.0;
 }
 
-/*-----Indicators----*/
-#idle_inhibitor.activated {
-  color: #2dcc36;
+#workspaces button:hover {
+  color: @textcolor1;
+  background: @workspacesbackground2;
+  border-radius: 15px;
+  opacity: 0.7;
 }
+
+/* -----------------------------------------------------
+* Window
+* ----------------------------------------------------- */
+
+window#waybar.empty #window {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+/* -----------------------------------------------------
+* Modules
+* ----------------------------------------------------- */
+
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+/* -----------------------------------------------------
+* Custom Power
+* ----------------------------------------------------- */
+
+#custom-power {
+  background-color: transparent;
+  box-shadow: none;
+  color: @textcolor1;
+  margin: 0px;
+  padding: 0px;
+  font-size: 30px;
+}
+
+/* -----------------------------------------------------
+* Hardware Group
+* ----------------------------------------------------- */
+
+#disk, #memory, #cpu {
+  background-color: transparent;
+  box-shadow: none;
+  margin: 8px 4px 8px 4px;
+  padding: 0px;
+  border-style: none;
+}
+
+/* -----------------------------------------------------
+* Pulseaudio
+* ----------------------------------------------------- */
+
 #pulseaudio.muted {
-  color: #cc3436;
+  background-color: @backgrounddark;
+  color: @textcolor1;
 }
-#battery.charging {
-  color: #2dcc36;
+
+/* -----------------------------------------------------
+* Bluetooth
+* ----------------------------------------------------- */
+
+#bluetooth.connected {
+  color: #0000bb;
 }
-#battery.warning:not(.charging) {
-  color: #e6e600;
+
+#bluetooth.off {
+  background-color: transparent;
+  box-shadow: none;
+  padding: 0px;
+  margin: 0px;
 }
+
+/* -----------------------------------------------------
+* Battery
+* ----------------------------------------------------- */
+
+#battery.charging, #battery.plugged {
+  color: @textcolor2;
+  background-color: @backgroundlight;
+}
+
+@keyframes blink {
+to {
+  background-color: @backgroundlight;
+  color: @textcolor2;
+}
+}
+
 #battery.critical:not(.charging) {
-  color: #cc3436;
+  background-color: #f53c3c;
+  color: @error;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
-#temperature.critical {
-  color: #cc3436;
+
+/* -----------------------------------------------------
+* Tray
+* ----------------------------------------------------- */
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
 }
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+}
+
