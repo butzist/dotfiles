@@ -2,7 +2,7 @@
   "output": ["eDP-1"],
   "modules-left": ["sway/workspaces", "sway/mode"],
   "modules-center": ["clock"],
-  "modules-right": ["tray", "network", "pulseaudio", "cpu", "memory", "battery", "custom/power"],
+  "modules-right": ["tray", "network", "bluetooth", "pulseaudio", "cpu", "memory", "battery", "custom/power"],
 
   "sway/mode": {
     "format": "<span style=\"italic\">{}</span>"
@@ -19,8 +19,7 @@
     "spacing": 10
   },
   "clock": {
-    // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-    // "format-alt": "{:%Y-%m-%d}"
+    "tooltip-format": "<big>{:%d %B %Y}</big>\n<tt><small>{calendar}</small></tt>",
     "on-click": "gnome-calendar"
   },
   "pulseaudio": {
@@ -43,11 +42,13 @@
   },
   "memory": {
     "interval": 5,
-    "format": "  {}%"
+    "format": "  {}%",
+    "on-click": "alacritty -e 'btop'"
   },
   "cpu": {
     "interval": 5,
-    "format": "  {usage:2}%"
+    "format": "  {usage:2}%",
+    "on-click": "alacritty -e 'btop'"
   },
   "battery": {
     "states": {
@@ -63,6 +64,13 @@
       "  ",
       "  "
     ]
+  },
+  "bluetooth": {
+    "format": " ",
+    "tooltip-format": "{status}",
+    "interval": 30,
+    "on-click": "blueman-manager",
+    "format-no-controller": ""
   },
   "custom/power": {
     "format": " ",
