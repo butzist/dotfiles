@@ -1,3 +1,6 @@
+[window]
+opacity = 0.5
+
 [font]
 normal = { family = "FiraCode Nerd Font" }
 size = 11
