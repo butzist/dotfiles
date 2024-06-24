@@ -1,6 +1,6 @@
 {
   "output": [
-    "eDP-1"
+    "*"
   ],
   "modules-left": [
     "sway/workspaces",

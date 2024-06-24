@@ -31,8 +31,8 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #output DP-3 pos 0 30 res 1680x1050 scale 1.2
 #output DP-4 pos 1680 0 res 1920x1080 scale 1.3
 #output eDP-1 pos 3600 0 res 1920x1080 scale 1.5
-output DP-8 pos 0 720 res 1920x1080 scale 1
-output DP-7 pos 1920 360 res 2560x1440 scale 1
+output "Samsung Electric Company S27F350 H4ZMA14287" pos 0 720 res 1920x1080 scale 1
+output "Samsung Electric Company LS27A600U H4ZT400506" pos 1920 360 res 2560x1440 scale 1
 output eDP-1 pos 4480 0 res 2880x1800 scale 1.5
 
 ## Idle configuration
@@ -65,7 +65,7 @@ output eDP-1 pos 4480 0 res 2880x1800 scale 1.5
 input "1267:12693:ELAN0676:00_04F3:3195_Touchpad" {
     dwt enabled
     tap enabled
-    natural_scroll disabled
+    natural_scroll enabled
     middle_emulation disabled
 }
 
@@ -214,11 +214,11 @@ exec dbus-update-activation-environment --systemd SWAYSOCK WAYLAND_DISPLAY XDG_C
 set $lock_command swaylock --daemonize --ignore-empty-password --show-failed-attempts -c000000
 bindsym $mod+l exec $lock_command
 exec swayidle -w \
-    timeout 300 'swaymsg "output * dpms off"' \
-    timeout 305 "$lock_command" \
     timeout 5 'if pgrep -x swaylock; then swaymsg "output * dpms off"; fi' \
     resume 'swaymsg "output * dpms on"' \
     before-sleep "$lock_command"
+#    timeout 300 'swaymsg "output * dpms off"' \
+#    timeout 305 "$lock_command" \
 
 #
 # Status Bar:
