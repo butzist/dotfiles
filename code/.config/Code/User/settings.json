@@ -1,0 +1,154 @@
+{
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "never",
+            "source.fixAll": "explicit"
+        },
+        "editor.formatOnType": true
+    },
+    "[vue]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "never",
+            "source.fixAll": "explicit",
+            "source.fixAll.eslint": "explicit"
+        },
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "never",
+            "source.fixAll": "explicit",
+            "source.fixAll.eslint": "explicit"
+        },
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "never",
+            "source.fixAll": "explicit",
+            "source.fixAll.eslint": "explicit"
+        },
+    },
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit",
+        "source.fixAll": "explicit",
+        "source.fixAll.eslint": "explicit"
+    },
+    "editor.fontFamily": "'FiraCode Nerd Font', monospace",
+    "editor.formatOnSave": true,
+    "emmet.includeLanguages": {
+        "rust": "html",
+    },
+    "eslint.format.enable": true,
+    "eslint.validate": [
+        "javascript",
+        "typescript",
+        "javascriptreact",
+        "vue"
+    ],
+    "eslint.workingDirectories": [
+        {
+            "mode": "auto"
+        }
+    ],
+    "eslint.lintTask.enable": true,
+    "editor.fontLigatures": true,
+    "editor.bracketPairColorization.enabled": true,
+    "git.autofetch": true,
+    "git.enableSmartCommit": true,
+    "git.mergeEditor": true,
+    "go.formatTool": "goimports",
+    "go.toolsManagement.autoUpdate": true,
+    "liveshare.authenticationProvider": "Microsoft",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "python.defaultInterpreterPath": "/usr/bin/python3",
+    "python.formatting.blackArgs": [
+        "--line-length=140",
+        "--target-version=py38"
+    ],
+    "python.formatting.provider": "black",
+    "python.languageServer": "Pylance",
+    "python.linting.enabled": true,
+    "python.linting.pylintCategorySeverity.convention": "Warning",
+    "python.linting.pylintEnabled": true,
+    "python.terminal.activateEnvironment": false,
+    "python.testing.pytestEnabled": true,
+    "redhat.telemetry.enabled": false,
+    "terminal.integrated.inheritEnv": false,
+    "vetur.experimental.templateInterpolationService": true,
+    "vetur.format.enable": false,
+    "vetur.useWorkspaceDependencies": true,
+    "vetur.validation.templateProps": true,
+    "vs-kubernetes": {
+        "vs-kubernetes.knownKubeconfigs": [
+            "/tmp/mk.conf",
+            "/home/adam/.kube/config"
+        ],
+        "vs-kubernetes.kubeconfig": "/home/adam/.kube/config",
+        "vs-kubernetes.ignore-recommendations": true,
+        "vs-kubernetes.crd-code-completion": "disabled"
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+    "julia.symbolCacheDownload": true,
+    "julia.enableTelemetry": true,
+    "julia.lint.run": true,
+    "julia.lint.missingrefs": "all",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "liveshare.launcherClient": "visualStudioCode",
+    "settingsSync.ignoredExtensions": [
+        "ms-vsliveshare.vsliveshare"
+    ],
+    "cSpell.userWords": [
+        "bindgen",
+        "bson",
+        "datahow",
+        "Debugf",
+        "kube",
+        "logrus",
+        "Plotly",
+        "szalkowski",
+        "timeseries"
+    ],
+    "gitlens.plusFeatures.enabled": false,
+    "evenBetterToml.formatter.allowedBlankLines": 1,
+    "evenBetterToml.formatter.arrayTrailingComma": true,
+    "evenBetterToml.formatter.arrayAutoCollapse": true,
+    "evenBetterToml.formatter.columnWidth": 140,
+    "errorLens.excludeBySource": [
+        "cSpell"
+    ],
+    "banner-comments.h1": "Standard",
+    "editor.fontSize": 15,
+    "editor.renderWhitespace": "trailing",
+    "workbench.editor.empty.hint": "hidden",
+    "[javascript][typescript][vue]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "never",
+            "source.fixAll": "explicit",
+            "source.fixAll.eslint": "explicit"
+        }
+    },
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+    "vim.leader": "<space>",
+    "workbench.iconTheme": "catppuccin-frappe",
+    "workbench.colorTheme": "Catppuccin Frappé",
+    //"rust-analyzer.checkOnSave.command": "clippy"
+}
